@@ -1,0 +1,20 @@
+[package]
+name = "loop-stitch"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Find and render low-click loop points in PCM WAV audio"
+license = "MIT"
+repository = "https://github.com/nicholas-ruest/loop-stitch"
+keywords = ["audio", "wav", "loop", "sound-design", "cli"]
+categories = ["command-line-utilities", "multimedia::audio"]
+
+[dependencies]
+clap = { version = "4.5.51", features = ["derive"] }
+hound = "3.5.1"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+
+[profile.release]
+lto = "thin"
+strip = true
